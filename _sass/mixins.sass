@@ -1,0 +1,9 @@
+=clearfix
+  &:after
+    clear: both
+    content: " "
+    display: table
+
+=desktop
+  @media screen and (min-width: 960px)
+    @content

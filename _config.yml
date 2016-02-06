@@ -1,0 +1,13 @@
+title: "CSS : l'Art et la Science"
+email: bbxdesign@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Un parcours initiatique à l'intégration Web
+baseurl: ""
+url: "http://yourdomain.com"
+
+# Build settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
