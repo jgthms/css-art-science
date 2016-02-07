@@ -1,4 +1,5 @@
 ---
+order: 1
 layout: default
 title: Un tango se danse à deux
 subtitle: "HTML & CSS, sémantique, attributs, flux"
@@ -220,4 +221,4 @@ Un type de document, des informations globales (encodage des caractères, titre 
 Ajoutez du contenu, puis modifiez-le, dupliquer-le, ébranlez-le, sauvegardez-le, [validez-le](http://validator.w3.org/check "Validateur W3C") !
 
 Exprimez-vous librement. En listes. En titres. En paragraphes. Je veux du relief, du dynamisme, du suspense !
-Il faut savoir poser des fondations solides (HTML) avant de venir les troubler, les [émouvoir](2-pinceau.html "Un monde à repeindre") (CSS).
+Il faut savoir poser des fondations solides (HTML) avant de venir les troubler, les [émouvoir](/2-pinceau/ "Un monde à repeindre") (CSS).

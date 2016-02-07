@@ -2,14 +2,18 @@
 
 html
   background: $body-background
+  background-attachment: fixed
+  background-image: linear-gradient($body-background-darker, $body-background)
   font-size: $size-normal
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   min-width: 300px
   overflow-x: hidden
   overflow-y: scroll
-  padding: 2rem 0
+  padding: 1rem
   text-rendering: optimizeLegibility
+  &.is-active
+    overflow: hidden
 
 body,
 button,
@@ -38,8 +42,7 @@ pre
 
 body
   background: white
-  border: solid $border
-  border-width: 1px 0
+  box-shadow: 0 0 0 1px rgba(black, 0.07), 0 0 2rem rgba(black, 0.07)
   color: $text
   font-size: 1rem
   line-height: 1.428571428571429
@@ -108,17 +111,15 @@ table
 
 +desktop
   html
-    background-attachment: fixed
-    background-image: linear-gradient($body-background-darker, $body-background)
     font-size: 20px
     padding: 0
   body
-    border: none
-    box-shadow: 0 0 4rem rgba(black, 0.07)
+    box-shadow: 0 0 0 1px rgba(black, 0.07), 0 0 4rem rgba(black, 0.07)
     margin: 0 auto
     max-width: 50rem
     padding: 0 8rem
-  code
+  code,
+  pre
     font-size: 14px
   pre code
     padding: 1rem 8rem

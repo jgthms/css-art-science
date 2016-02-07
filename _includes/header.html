@@ -2,7 +2,11 @@
   {% if page.suptitle %}
     <em>{{ page.suptitle }}</em>
   {% else %}
-    <em>CSS : l'Art &amp; la Science</em>
+    <em>
+      <a href="{{ site.baseurl }}/">
+        Chapitre {{ page.order }}
+      </a>
+    </em>
   {% endif %}
   <h1>{{ page.title }}</h1>
   <h2>{{ page.subtitle }}</h2>

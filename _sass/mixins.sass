@@ -4,6 +4,17 @@
     content: " "
     display: table
 
+=overlay($offset: 0)
+  bottom: $offset
+  left: $offset
+  position: absolute
+  right: $offset
+  top: $offset
+
+=mobile
+  @media screen and (max-width: 959px)
+    @content
+
 =desktop
   @media screen and (min-width: 960px)
     @content

@@ -1,3 +1,37 @@
 <footer>
+  <p>
+    <strong xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">{{ site.title }}</strong> écrit par <a xmlns:cc="http://creativecommons.org/ns#" href="http://bbxdesign.com" property="cc:attributionName" rel="cc:attributionURL">Jeremy Thomas</a>.
+  </p>
+  <p>
+    Code source sous license <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. Contenu textuel sous license <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+  </p>
   <p>Copyright 2016 Jeremy Thomas</p>
+  <div class="social">
+    <a href="https://twitter.com/bbx" class="twitter-follow-button" data-show-count="true" data-lang="en">@bbx</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ site.title }}" data-url="{{ site.url }}" data-count="horizontal" data-via="bbx" data-related="bbx:Auteur">Tweet</a>
+  </div>
 </footer>
+
+<nav id="nav">
+  {% assign sorted_pages = site.pages | sort:"order"  %}
+  {% for page in sorted_pages %}
+    {% unless page.exclude == true %}
+      <a href="{{ page.url | prepend: site.baseurl }}">
+        <small>{{ page.order }}.</small>
+        <strong>{{ page.title }}</strong>
+        <em>{{ page.subtitle }}</em>
+      </a>
+    {% endunless %}
+  {% endfor %}
+</nav>
+
+<a id="toggle" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</a>
+
+<script async id="twitter-wjs" src="https://platform.twitter.com/widgets.js"></script>
+
+<script src="{{ site.baseurl }}/javascript/jquery-2.2.0.min.js"></script>
+<script src="{{ site.baseurl }}/javascript/main.js"></script>
