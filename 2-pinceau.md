@@ -290,7 +290,7 @@ Comment savoir qui gagne exactement ?
 Google Chrome / Safari : Ctrl + Shift + C
 Ou Firefox + Firebug.
 
-<figure class="image is-normal">
+<figure class="image">
   <img src="/images/mon-paragraphe-ma-bataille.png" alt="Mon paragraphe, ma bataille">
   <figcaption>Le sélecteur vainqueur : ici la balise HTML "style"</figcaption>
 </figure>
