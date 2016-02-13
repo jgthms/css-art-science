@@ -6,8 +6,8 @@ subtitle: "CSS : syntaxe, sélecteurs, héritage"
 permalink: /2-pinceau/
 ---
 
-Il y a peu de science en CSS.
-Des propriétés par dizaines. Des valeurs par douzaines. Des lignes de conduite.
+Il y a peu de science en CSS.  
+Des propriétés par dizaines. Des valeurs par douzaines. Des lignes de conduite.  
 Tout l’art en CSS consiste à manier l’indépendance des éléments, la concision du code et l’efficacité des sélecteurs.
 
 Pour commencer :
@@ -34,7 +34,7 @@ selecteur{ propriété: valeur;}
 
 Le `<p>` du HTML est stylé grâce au p en CSS. En vérité, tous les `<p>` sont stylés comme tel.
 
-Mais voilà, on ne veut pas forcément styler tous les `<p>` mais seulement certains, voire un seul.
+Mais voilà, on ne veut pas forcément styler tous les `<p>` mais seulement certains, voire un seul.  
 On peut alors sélectionner certains `<p>` en leur ajoutant l’attribut “class”.
 
 {% highlight html %}
@@ -125,7 +125,7 @@ Il est d'ailleurs possible de regrouper plusieurs sélecteurs pour un même grou
 .three{ color:magenta;}
 {% endhighlight %}
 
-Cette pratique est très utile lorsque vous voudrez modifier ultérieurement vos valeurs car ces dernières seront regroupées en un seul point.
+Cette pratique est très utile lorsque vous voudrez modifier ultérieurement vos valeurs car ces dernières seront regroupées en un seul point.  
 Elle s'avère indispensable lorsqu'il s'agit de modifier uniquement le `background-position` de plusieurs éléments partageant le même `background-image`.
 
 ### Chez le notaire
@@ -138,7 +138,7 @@ body{ color:red;}
 
 Toutes les balises étant enfants/descendants de `<body>`, tout le texte sera rouge.
 
-Enfin… Certaines balises ne se laissent pas dominer par leurs ancêtres. Les `<a>` par exemple resteront bleus.
+Enfin… Certaines balises ne se laissent pas dominer par leurs ancêtres. Les `<a>` par exemple resteront bleus.  
 De même, certaines propriétés ne se propagent pas aux enfants :
 
 {% highlight css %}
@@ -149,10 +149,10 @@ Une seule grosse bordure sera visible, pour le `<body>`, mais par pour ses desce
 
 ### Internal affairs
 
-Jusqu’à présent je vous ai fait mettre le CSS dans un fichier à part.
+Jusqu’à présent je vous ai fait mettre le CSS dans un fichier à part.  
 Il existe néanmoins deux approches alternatives de l’ennemi en passant directement par le HTML :
 
-**1.** balises de style
+**1.** **balises** de style
 
 {% highlight html %}
 <style type="text/css">
@@ -161,7 +161,7 @@ p{ color: green;}
 <p>Heureux qui comme Ulysse…</p>
 {% endhighlight %}
 
-**2.** attribut HTML
+**2.** **attribut** HTML
 
 {% highlight html %}
 <p style="color: green;">A fait un beau voyage…</p>
@@ -193,7 +193,7 @@ p{ color: orange;} /* Vainqueur */
 div{ color: green;}
 {% endhighlight %}
 
-Une classe est plus forte.
+Une **classe** est plus forte.
 
 {% highlight html %}
 <div>
@@ -207,7 +207,7 @@ p{ color: orange;}
 .nenuphar{ color: blue;} /* Vainqueur */
 {% endhighlight %}
 
-Néanmoins la classe est terrassée par l’identifiant.
+Néanmoins la classe est terrassée par l’**identifiant**.
 
 {% highlight html %}
 <div>
@@ -273,7 +273,7 @@ Classement de la compétition de priorité, avec l’exemple précédent, du moi
   </tbody>
 </table>
 
-Un mot sur le grand vainqueur : `!important`.
+Un mot sur le grand vainqueur : **!important**.
 
 {% highlight css %}
 p{ color: red !important;}

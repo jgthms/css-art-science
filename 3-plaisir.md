@@ -127,7 +127,7 @@ Pratique pour jouer sur une valeur sans changer les deux autres.
 Comme pour le rgba, le hsla existe.
 
 {% highlight css %}
-p{ color:hsl(227%, 52%, 38%, .7);}
+p{ color:hsla(227%, 52%, 38%, .7);}
 {% endhighlight %}
 
 Le 0 est facultatif pour les décimales.
@@ -376,7 +376,7 @@ p{ text-indent: -2px;}
 A l’ombre, rien de nouveau. Une syntaxe :
 
 {% highlight css %}
-p{ text-shadow:[x], [y], [flou], [étendue] [couleur];}
+p{ text-shadow:[x] [y] [flou] [couleur];}
 {% endhighlight %}
 
 Un duo [x] horizontal et [y] vertical pour la position de l’ombre. En pixels positif ou négatif. Le [flou] de l’ombre, en pixels. L’étendue (facultative), de 0 à 1. Puis la couleur : hexa, rgba, rgba, hsl, hsla, texte...
@@ -384,13 +384,13 @@ Un duo [x] horizontal et [y] vertical pour la position de l’ombre. En pixels p
 Pour mieux vous lire, un appui noir transparent :
 
 {% highlight css %}
-p{ text-shadow: 0, 2px, 2px, rgba( 0, 0, 0, .7);}
+p{ text-shadow: 0 2px 2px rgba( 0, 0, 0, .7);}
 {% endhighlight %}
 
 Sur fond foncé, une lumière vers le haut :
 
 {% highlight css %}
-p{ text-shadow: 0, -1px; 0, rgba( 255, 255, 255, .3);}
+p{ text-shadow: 0 -1px 0 rgba( 255, 255, 255, .3);}
 {% endhighlight %}
 
 #### white-space

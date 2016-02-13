@@ -6,17 +6,17 @@ subtitle: "HTML & CSS, sémantique, attributs, flux"
 permalink: /1-tango/
 ---
 
-D’un côté, le HTML.
-Du contenu, des balises, de la structure.
-Du fond, du froid, du sens.
-La raison d’être d’une page web. La source, celle qu’on peut voir. Des règles, des contraintes. Une sémantique à respecter. Des attributs, des parents, des enfants.
+D’un côté, le HTML.  
+Du contenu, des balises, de la structure.  
+Du fond, du froid, du sens.  
+La raison d’être d’une page web. La source, celle qu’on peut voir. Des règles, des contraintes. Une sémantique à respecter. Des attributs, des parents, des enfants.  
 Il faut l’écrire, le réfléchir, l’ordonner.
 
-Son partenaire, le CSS.
+Son partenaire, le CSS.  
 Un langage, des formes. Une syntaxe, des propriétés. Une vision, des solutions.
 
-Le HTML est inerte. Le CSS est vivant.
-Le HTML est monochrome. Le CSS est coloré.
+Le HTML est inerte. Le CSS est vivant.  
+Le HTML est monochrome. Le CSS est coloré.  
 Le HTML est mécanique. Le CSS est romantique.
 
 Pour ériger une statue, il faut poser un socle.
@@ -30,9 +30,9 @@ Ouvrez le bloc-notes. Tapez donc :
 le pâté et la bouteille de vin blanc.</p>
 {% endhighlight %}
 
-Enregistrez “index.html”. Ouvrez dans Chrome (Ctrl+Alt+Shift+R).
-Une balise s’est ouverte, du texte a été entré, la balise s’est fermée.
-Le HTML est comme ça : encadrer c’est ordonner.
+Enregistrez “index.html”. Ouvrez dans [Chrome](http://www.google.com/chrome) (Ctrl+Alt+Shift+R).  
+Une balise s’est ouverte, du texte a été entré, la balise s’est fermée.  
+Le HTML est comme ça : encadrer c’est ordonner.  
 Les balises sont dans la source mais ne s’affichent pas à l’écran.
 
 <aside>
@@ -217,8 +217,8 @@ En somme, voici un document HTML correct :
   <figcaption>"Mon code est valide !"</figcaption>
 </figure>
 
-Un type de document, des informations globales (encodage des caractères, titre de la page, lien vers un futur fichier CSS), du contenu qui s’affiche. Votre **première page HTML**. Sauvegardez-la, vous allez en avoir besoin.
+Un type de document, des informations globales (encodage des caractères, titre de la page, lien vers un futur fichier CSS), du contenu qui s’affiche. Votre **première page HTML**. Sauvegardez-la, vous allez en avoir besoin.  
 Ajoutez du contenu, puis modifiez-le, dupliquer-le, ébranlez-le, sauvegardez-le, [validez-le](http://validator.w3.org/check "Validateur W3C") !
 
-Exprimez-vous librement. En listes. En titres. En paragraphes. Je veux du relief, du dynamisme, du suspense !
+Exprimez-vous librement. En listes. En titres. En paragraphes. Je veux du relief, du dynamisme, du suspense !  
 Il faut savoir poser des fondations solides (HTML) avant de venir les troubler, les [émouvoir](/2-pinceau/ "Un monde à repeindre") (CSS).

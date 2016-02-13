@@ -223,7 +223,7 @@ Largeur du `<p>` : 400px (le parent) - 3px à gauche - 20px de padding à gauche
 Vous êtes introduit au raccourci border. Ai-je besoin de préciser la route plus longue ?
 
 * border-color : hexa, rgb, hsl... as usual
-* border-style : solid (plein), dotted (pointillé, dashed (des tirets)
+* border-style : solid (plein), dotted (pointillé), dashed (des tirets)
 * border-width: en pixel, selon le jeu des points cardinaux.
 
 Les quatre bordures, tels des mousquetaires sans cission.  
