@@ -291,3 +291,396 @@ table {
 
 Le `border-collapse` permet aux bordures des cellules d'être **confondues**. Ainsi, entre deux cellules adjacentes, la bordure a une épaisseur de 1 pixel. Le résultat est beaucoup plus sobre et pratique.  
 En ce qui concerne le `border-spacing`, il s'agit de l'espacement _entre_ les cellules. Une sorte de `margin` particulier.
+
+#### tbody, thead, tfoot : un tableau de la tête aux pieds
+
+Déjà très morcelé, le tableau peut se dôter d'un corps en 3 parties :
+
+{% highlight html %}
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Année</th>
+      <th>Minutes</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>Titre</th>
+      <th>Année</th>
+      <th>Minutes</th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>Day of the Fight</td>
+      <td>1951</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Flying Padre</td>
+      <td>1951</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>The Seafarers</td>
+      <td>1953</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+
+<figure class="image">
+  <img src="/images/tableau-html-thead-tfoot-tbody.png" alt="Tableau HTML en 3 parties">
+  <figcaption>Un tableau HTML en 3 parties</figcaption>
+</figure>
+
+Tout ceci n'est qu'une question de **sémantique**.  
+Vous noterez que le `<tfoot>`, malgré qu'il soit avant le `<tbody>` dans le code HTML, se retrouve _à la fin_ à l'affichage.  
+Cette particularité est une obligation. Le W3C le justifie par le fait que le `<tfoot>` doit être généré avant que les données (parfois très nombreuses) du `<tbody>` arrivent.
+
+### Styler un formulaire
+
+L'interactivité avec le serveur. Je demande, tu renvoies.  
+Les formulaires sont omniprésents sur la toile, mais bien trop souvent pourvus d'un graphisme douteux. Pour cause : les formulaires sont difficiles à styler. Ils répondent différemment aux styles qu'on leur appliquent. Par exemple, le line-height est partiellement, voire totalement, inefficace sur les champs de texte.  
+De plus, chaque navigateur possède à la base sa propre flopée de styles pour les éléments des formulaires. Alors quand il s'agit de réappliquer un style par-dessus, commun à tous, l'exercice s'avère tendu.  
+En même temps, les formulaires sont là pour être utilisés avant d'être observés. Ils ont un rôle bien défini.
+
+Malgré tout, un formulaire a le droit et la possibilité de se voir embelli par nos soins. Il suffit de bien apréhender les contraintes posées pour mieux les embrasser. Il y en a même qui écrivent des articles plutôt intéressants sur [comment réaliser un bon formulaire HTML](http://bbxdesign.com/2009/04/21/comment-realiser-un-bon-formulaire-html). C'est dire.
+
+#### form
+
+La balise `<form>` est celle qui englobe tous les éléments d'un formulaire.  
+Ce formulaire a un rôle **unique**. Comprenez : tous les éléments inclus (champ texte, boutons radio, checkbox, menu select...) sont **associés**. C'est leur **combinaison** qui va définir ce que le formulaire va nous renvoyer par la suite.
+
+{% highlight html %}
+<form action="resultat.php"><!-- Eléments du formulaire --></form>
+{% endhighlight %}
+
+L'attribut "action" est obligatoire. Il définit où se trouve le fichier qui renverra le résultat de la soumission du formulaire.
+
+#### input
+
+Derrière cette balise, un grand nombre de possibilités selon la valeur de l'attribut "type" :
+
+<table>
+  <tbody>
+    <tr>
+      <th>
+        Type
+      </th>
+      <th>
+        Apparence
+      </th>
+      <th>
+        Stylable ?
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="text"&gt;</code>
+      </td>
+      <td>
+        <input type="text" value="Un champ texte">
+      </td>
+      <td>
+        Oui
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="password"&gt;</code>
+      </td>
+      <td>
+        <input type="password" value="123456789">
+      </td>
+      <td>
+        Oui
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="checkbox"&gt;</code>
+      </td>
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>
+        Non
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="radio"&gt;</code>
+      </td>
+      <td>
+        <input type="radio">
+      </td>
+      <td>
+        Non
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="file"&gt;</code>
+      </td>
+      <td>
+        <input type="file">
+      </td>
+      <td>
+        Non (pas du tout même)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="submit"&gt;</code> ou <code>&lt;input type="button"&gt;</code>
+      </td>
+      <td>
+        <input type="button" value="Soumettre le formulaire">
+      </td>
+      <td>
+        Oui mais...
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="reset"&gt;</code>
+      </td>
+      <td>
+        <input type="reset">
+      </td>
+      <td>
+        Oui mais...
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="image" alt="Description"&gt;</code>
+      </td>
+      <td>
+        <input type="image" src="input-type-image.png" alt="Une image pour soumission">
+      </td>
+      <td>
+        Non
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>&lt;input type="hidden"&gt;</code>
+      </td>
+      <td>
+        <input type="hidden" value="Une donnée utile">Invisible mais utilisé pour transmettre des données sans les afficher
+      </td>
+      <td>
+        ...
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### textarea
+
+Lorsqu'une seule ligne ne suffit plus...
+
+<textarea style="height:140px; line-height:20px; max-width:550px; padding:10px; width:550px;" cols="100" rows="8">Le train, maintenant, roulait à toute vitesse, sur le plateau qui va de Bolbec à Sotteville. Il devait filer d'un trait à Paris, sans arrêt aucun, sauf aux points marqués pour prendre de l'eau. L'énorme masse, les dix-huit wagons, chargés, bondés de bétail humain, traversaient la campagne noire, dans un grondement continu. Et ces hommes qu'on charriait au massacre, chantaient, chantaient à tue-tête, d'une clameur si haute, qu'elle dominait le bruit des roues.</textarea>
+
+Les attributs "cols" et "rows" ne sont plus obligatoires mais il est préférable de les garder pour d'antiques navigateurs.  
+Le textarea répond aux indications de dimensions :
+
+{% highlight css %}
+textarea{ height:140px; line-height:20px; padding:10px; width:550px;}
+{% endhighlight %}
+
+Cependant, la réaction selon les navigateurs peut varier, notamment en ce qui concerne l'apparence de la scrollbar lorsque celle-ci apparaît.
+
+Aussi, il faut désormais tenir compte de la tendance des navigateurs à offrir la possibilité à l'internaute de redimensionner à souhait les textarea, ce qui, en soit, est un net avantage pour l'internaute mais parfois un souci pour l'intégrité du design.  
+Même si cette feature est contournable grâce à la propriété `textarea{ resize:none;}` (qui empêche le **redimensionnement du textarea**), je ne la conseille pas.  
+Dans ce cas, il est préférable de bloquer uniquement le redimensionnement horizontal qui est souvent celui qui pose souci.
+
+{% highlight css %}
+textarea{ max-width:550px;}
+{% endhighlight %}
+
+<aside>Firefox 4 permet, comme Chrome, de redimensionner les textarea. Cependant, Firefox le fait bien mal. Alors que Chrome utilise les valeurs "height" et "width" aussi comme valeurs <em>minmales</em> du textarea, Firefox laisse la possibilité de redimensionner jusqu'à 0x0 pixel, ce qui est une bêtise totale. C'est pourquoi il faut doubler les valeurs height/width avec leurs compères min-height/min-width.</aside>
+
+#### label
+
+Le label ne fait rien en soi. Il est surtout là pour décrire les input auxquels il est associé.
+
+{% highlight html %}
+<label for="nom">Nom</label><br><input id="nom" type="text">
+{% endhighlight %}
+
+<figure class="image">
+  <img src="/images/label-et-input-text.png" alt="Label et Input text">
+  <figcaption>Un label et un input text, what else?</figcaption>
+</figure>
+
+L'attribut "for" est plutôt pratique : en cliquant sur le label "Nom", le focus est réalisé sur l'input text à l'id "nom".  
+Vous me direz "Pourquoi ne pas cliquer directement dans l'input text ?". En l'occurence, oui. Le champ de texte est assez vaste pour être facilement cliquable.
+
+<p>L'intérêt de la balise <code>&lt;label&gt;</code> se trouve lorsqu'elle est associée à des boutons radio <input type="radio"> ou des checkbox <input type="checkbox">. Comme vous pouvez le constater, la zone cliquable de ces boutons est plutôt restreinte. Voici comment y remédier :</p>
+
+{% highlight html %}
+<input id="oui" type="radio" name="question" value="oui">
+<label for="oui">Oui</label>
+<br>
+<input id="non" type="radio" name="question" value="non">
+<label for="non">Non</label>
+{% endhighlight %}
+
+<p class="image">
+  <img src="img/boutons-et-label.png" alt="Boutons radio et label">
+  <span>Les mots "Oui" et "Non" sont cliquables</span>
+</p>
+
+L'attribut "for" associe à nouveau chaque label à un bouton radio.  
+L'attribut "name" quant à lui associe les boutons radio entre eux : cliquez sur l'un, ça désactive tous les autres. Logique : le choix est exclusif au sein des boutons radio. La zone cliquable s'est bien agrandie.
+
+Mais oubliez cette syntaxe lorsqu'il en existe une plus légère et tout aussi efficace :
+
+{% highlight html %}
+<label>
+  <input type="radio" name="question" value="oui"> Oui
+</label>
+<br>
+<label>
+  <input type="radio" name="question" value="non"> Non
+</label>
+{% endhighlight %}
+
+Les input radio (et checkbox) peuvent être **imbriqués** dans un `<label>`. Résultat : on s'affranchit de l'utilisation des attributs for (pour le label) et id (pour les input). Une notation bien plus simple pour une zone cliquable tout aussi, voire légèrement plus grande.
+
+#### Un formulaire CSS simple, valide et flexible
+
+Avec un minimum de classes et de classe, on peut déjà arriver à un résultat intéressant.
+
+{% highlight html %}
+<div class="form">
+  <form action="/">
+    <p>
+      <label>Name</label><br>
+      <input type="text">
+    </p>
+    <p>
+      <label>Email</label><br>
+      <input type="text">
+    </p>
+    <p>
+      <label>You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?</label><br>
+      <label class="radio"><input name="punk" type="radio"> Yes</label><br>
+      <label class="radio"><input name="punk" type="radio"> No</label>
+    </p>
+    <p>
+      <label>Why's that?</label><br>
+      <textarea></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Go ahead, make my day">
+    </p>
+  </form>
+</div>
+{% endhighlight %}
+
+<div class="form">
+  <form action="/">
+    <p>
+      <label>Name</label><br>
+      <input type="text">
+    </p>
+    <p>
+      <label>Email</label><br>
+      <input type="text">
+    </p>
+    <p>
+      <label>You've got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?</label><br>
+      <label class="radio"><input name="punk" type="radio"> Yes</label><br>
+      <label class="radio"><input name="punk" type="radio"> No</label>
+    </p>
+    <p>
+      <label>Why's that?</label><br>
+      <textarea></textarea>
+    </p>
+    <p>
+      <input type="submit" value="Go ahead, make my day">
+    </p>
+  </form>
+</div>
+
+{% highlight css %}
+.form {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  padding: 20px;
+  width: 600px;
+}
+
+.form input[type=text],
+.form textarea {
+  border: 2px solid #ddd;
+}
+
+.form input[type=text] {
+  padding: 4px;
+  width: 260px;
+}
+
+.form input[type=text]:focus,
+.form textarea:focus {
+  border-color: #e64135;
+}
+
+.form textarea {
+  height: 120px;
+  max-width: 578px;
+  padding: 10px;
+  width: 578px;
+}
+
+.form label {
+  font-weight: bold;
+}
+
+.form .radio {
+  cursor: pointer;
+  font-weight: normal;
+}
+{% endhighlight %}
+
+{% highlight css %}
+/* Le bouton submit */
+
+.form input[type=submit] {
+  background: #f3f3f3;
+  background: -webkit-gradient(linear, 0% 40%, 0% 70%, from(#F5F5F5), to(#F1F1F1));
+  border: 1px solid #dcdcdc;
+  border-radius: 2px;
+  color: #6e6e6e;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 7px 12px;
+  position: relative;
+  text-shadow: 0 1px 0 #fff;
+  transition: border-color .218s;
+}
+
+.form input[type=submit]:hover {
+  border-color: #999;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+.form input[type=submit]:active {
+  border-color: #444;
+  color: #000;
+}
+{% endhighlight %}
+
+Les `<input type="text">` comprennent très mal, voire pas du tout, le `line-height`. Pour centrer le texte verticalement, il faut uniquement s'appuyer sur les `padding` : ici, 4px en haut et en bas.
+
+Pratique cette page. En voilà des [bonnes](/9-bonnes-pratiques), d'ailleurs.
